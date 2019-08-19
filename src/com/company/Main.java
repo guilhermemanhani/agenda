@@ -82,7 +82,8 @@ public class Main {
 
         System.out.printf("\nInforme o nome do contato:\n");
         nomeSemTrati = ler.nextLine();
-        nome = nomeSemTrati.substring(0, 1).toUpperCase() + nomeSemTrati.substring(1);
+        //nome = nomeSemTrati.substring(0, 1).toUpperCase() + nomeSemTrati.substring(1);
+        nome = Character.toUpperCase(nomeSemTrati.charAt(0)) + nomeSemTrati.substring(1);
 
         System.out.printf("\nInforme o telefone do contato:\n");
         telefone = ler.nextLine();
@@ -131,7 +132,7 @@ public class Main {
         for (i=0; i<n; i++) {
             if (agenda.get(i).toUpperCase().indexOf(s) != -1) {
                 dados = agenda.get(i).split(";");
-                System.out.printf("\nNome....: %s", dados[0]);
+                System.out.printf("\nNome:     %s", dados[0]);
                 System.out.printf("\nTelefone: %s\n", dados[1]);
             }
         }
