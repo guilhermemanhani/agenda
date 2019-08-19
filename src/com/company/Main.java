@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -27,10 +28,10 @@ public class Main {
                     incluir(agenda);
                     break;
                 case 2:
-                    excluir(agenda);
+                    listar(agenda);
                     break;
                 case 3:
-                    listar(agenda);
+                    excluir(agenda);
                     break;
                 case 4:
                     pesquisar(agenda);
@@ -43,9 +44,8 @@ public class Main {
                     break;
             }
             System.out.printf("\n\n");
-
+            exportar(agenda);
         }
-        exportar(agenda);
     }
 
 
@@ -80,16 +80,18 @@ public class Main {
 
     public static void incluir(ArrayList<String> agenda) {
         Scanner ler = new Scanner(System.in);
-        String nome, telefone;
+        String nome, nomeSemTrati, telefone;
 
         System.out.printf("\nInforme o nome do contato:\n");
-        nome = ler.nextLine();
+        nomeSemTrati = ler.nextLine();
+        nome = nomeSemTrati.substring(0, 1).toUpperCase() + nomeSemTrati.substring(1);
 
         System.out.printf("\nInforme o telefone do contato:\n");
         telefone = ler.nextLine();
 
         // grava os dados no final da "lista"
         agenda.add(nome + ";" + telefone);
+        Collections.sort(agenda);
     }
 
     public static void excluir(ArrayList<String> agenda) {
@@ -98,15 +100,13 @@ public class Main {
 
         listar(agenda);
 
-        System.out.printf("\nInforme a posiÃ§Ã£o a ser excluÃ­da:\n");
+        System.out.printf("\nInforme a posicao a ser excluida:\n");
         i = ler.nextInt();
 
         try {
             agenda.remove(i);
         } catch (IndexOutOfBoundsException e) {
-            // exceÃ§Ã£o lanÃ§ada para indicar que um Ã­ndice (i)
-            // estÃ¡ fora do intervalo vÃ¡lido (de 0 atÃ© agenda.size()-1)
-            System.out.printf("\nErro: posiÃ§Ã£o invÃ¡lida (%s).\n\n",
+            System.out.printf("\nErro: posicao invalida (%s).\n\n",
                     e.getMessage());
         }
     }
@@ -115,7 +115,7 @@ public class Main {
         System.out.printf("\nListadando os itens da Agenda:\n");
         int i, n = agenda.size();
         for (i=0; i<n; i++) {
-            System.out.printf("PosiÃ§Ã£o %d- %s\n", i, agenda.get(i));
+            System.out.printf("posicao %d- %s\n", i, agenda.get(i));
         }
         System.out.printf("---------------------------------------");
     }
