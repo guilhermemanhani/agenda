@@ -53,12 +53,10 @@ public class Main {
         try {
             FileReader arq = new FileReader("agenda.txt");
             BufferedReader lerArq = new BufferedReader(arq);
-            String linha = lerArq.readLine(); // lÃª a primeira linha
-            // a variÃ¡vel "linha" recebe o valor "null" quando o processo
-            // de repetiÃ§Ã£o atingir o final do arquivo texto
+            String linha = lerArq.readLine();
             while (linha != null) {
                 agenda.add(linha);
-                linha = lerArq.readLine(); // lÃª da segunda atÃ© a Ãºltima linha
+                linha = lerArq.readLine();
             }
             arq.close();
         } catch (IOException e) {
@@ -131,8 +129,6 @@ public class Main {
         s = s.toUpperCase();
         String dados[];
         for (i=0; i<n; i++) {
-            // informando "joÃ£o", por exemplo, na entrada serÃ£o mostrados
-            // todos os contatos que possuem "joÃ£o" no nome
             if (agenda.get(i).toUpperCase().indexOf(s) != -1) {
                 dados = agenda.get(i).split(";");
                 System.out.printf("\nNome....: %s", dados[0]);
@@ -140,6 +136,4 @@ public class Main {
             }
         }
     }
-
-
 }
