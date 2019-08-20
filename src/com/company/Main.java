@@ -19,7 +19,7 @@ public class Main {
         while (opcao != 5) {
 
             System.out
-                    .println("Escolha a opção: 1-Incluir  2-Listar  3-Excluir  4-Pesquisar 5-Sair");
+                    .println("Escolha a opção: 1-Incluir  2-Contatos  3-Excluir  4-Pesquisar 5-Sair");
             opcao = entrada.nextInt();
             entrada.nextLine();
 
@@ -28,7 +28,7 @@ public class Main {
                     incluir(agenda);
                     break;
                 case 2:
-                    listar(agenda);
+                    contatos(agenda);
                     break;
                 case 3:
                     excluir(agenda);
@@ -97,11 +97,10 @@ public class Main {
         Scanner ler = new Scanner(System.in);
         int i;
 
-        listar(agenda);
+        contatos(agenda);
 
         System.out.printf("\nInforme a posicao a ser excluida:\n");
         i = ler.nextInt();
-
         try {
             agenda.remove(i);
         } catch (IndexOutOfBoundsException e) {
@@ -110,11 +109,11 @@ public class Main {
         }
     }
 
-    public static void listar(ArrayList<String> agenda) {
+    public static void contatos(ArrayList<String> agenda) {
         System.out.printf("\nListadando os itens da Agenda:\n");
         int i, n = agenda.size();
         for (i=0; i<n; i++) {
-            System.out.printf("posicao %d- %s\n", i, agenda.get(i));
+            System.out.printf("Contato %d- %s\n", i, agenda.get(i));
         }
         System.out.printf("---------------------------------------");
     }
