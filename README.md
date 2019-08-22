@@ -1,10 +1,11 @@
 # agenda
-##use case
+
+## use case
 
 O usuário do sistema terá a permissão para utilizar os seguintes métodos: excluir um contato, buscar um contato, adicionar um contato e listar todos os contatos.
 ![caso de use do projeto agenda](doc/uc/usecase.png)
 ##
-##Diagrama de sequência
+## Diagrama de sequência
 
 O usuário dá start na aplicação, a primeira ação do programa é ler o banco de dados e então fica esperando a entrada do usuário para saber qual método o mesmo quer utilizar.
 O método lista  mostra todos os contatos da agenda em ordem alfabética.
