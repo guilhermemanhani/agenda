@@ -1,0 +1,13 @@
+@startuml
+
+title Use Case Diagram
+
+
+:User:
+
+User --> (Excluir)
+User --> (Adicionar)
+User --> (Buscar)
+User --> (Listar)
+
+@enduml

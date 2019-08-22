@@ -1,0 +1,26 @@
+@startuml
+
+title "Sequence Diagram"
+
+actor User
+boundary "Agenda" as agenda
+control "Listar" as lista
+control "Adicionar" as adicionar
+control "Excluir" as excluir
+control "Procurar" as procurar
+database TXT
+
+User -> agenda : To boundary
+agenda -> TXT : ler banco
+TXT --> agenda : info
+agenda -> lista : imprimi_contato()
+agenda -> TXT : salvar banco
+agenda -> adicionar : add_contato()
+agenda -> TXT : salvar banco
+agenda -> excluir : excluir_contato()
+agenda -> TXT : salvar banco
+agenda -> procurar : procurar_contato()
+agenda -> TXT : salvar banco
+
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+title Properties / Methods - Class Diagram
+
+
+skinparam componentStyle uml2
+class Main {
+
++{static} incluir(): Type {agenda}
++{static} excluir(): Type {agenda}
++{static} contatos(): Type {agenda}
++{static} pesquisar(): Type {agenda}
++{static} importar(): Type {agenda}
++{static} exportar(): Type {agenda}
+
+}
+
+@enduml
