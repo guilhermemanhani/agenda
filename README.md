@@ -2,7 +2,7 @@
 ##use case
 
 #####O usuário do sistema terá a permissão para utilizar os seguintes métodos: excluir um contato, buscar um contato, adicionar um contato e listar todos os contatos.
-![caso de use do projeto agenda](/Users/guilherme.manhani/Documents/Facul/Lab III/agenda/doc/uc/usecase.png)
+![caso de use do projeto agenda](doc/uc/usecase.png)
 ##Diagrama de sequência
 
 #####O usuário dá start na aplicação, a primeira ação do programa é ler o banco de dados e então fica esperando a entrada do usuário para saber qual método o mesmo quer utilizar.
@@ -16,8 +16,8 @@ O método procurar espera um entrada do usuário de qual contato ele deve buscar
 
 Após cada interação de qualquer método a agenda e salva no banco.
 
-![](/Users/guilherme.manhani/Documents/Facul/Lab III/agenda/doc/diagramaseq/imgseqdiagra.png)
+![](doc/diagramaseq/imgseqdiagra.png)
 ##
 ## Diagrama de classe
-![](/Users/guilherme.manhani/Documents/Facul/Lab III/agenda/doc/class/imgclass.png)
+![](doc/class/imgclass.png)
  
